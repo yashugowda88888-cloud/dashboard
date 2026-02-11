@@ -46,7 +46,7 @@ export default async function DashboardPage() {
                 <div className="flex flex-col md:flex-row gap-6 mb-8 items-start md:items-center justify-between">
                     <div>
                         <h1 className="text-3xl font-bold mb-2">Welcome back, {session.user.name}</h1>
-                        <p className="text-muted-foreground">Here's what's happening today.</p>
+                        <p className="text-muted-foreground">Here&apos;s what&apos;s happening today.</p>
                     </div>
                     {session.user.role === "admin" && (
                         <Link href="/admin" className="primary flex items-center gap-2">

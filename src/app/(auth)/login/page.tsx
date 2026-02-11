@@ -17,7 +17,10 @@ function LoginForm() {
 
     useEffect(() => {
         const successMsg = searchParams.get("success");
-        if (successMsg) setSuccess(successMsg);
+        if (successMsg) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            setSuccess(successMsg);
+        }
     }, [searchParams]);
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -38,7 +41,7 @@ function LoginForm() {
             } else {
                 router.push("/dashboard");
             }
-        } catch (err) {
+        } catch {
             setError("An unexpected error occurred");
             setLoading(false);
         }
@@ -105,7 +108,7 @@ function LoginForm() {
             </form>
 
             <p className="text-center mt-6 text-muted-foreground text-sm">
-                Don't have an account?{" "}
+                Don&apos;t have an account?{" "}
                 <Link href="/signup" className="text-primary font-semibold hover:underline">
                     Sign up
                 </Link>

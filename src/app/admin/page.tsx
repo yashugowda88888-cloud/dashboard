@@ -3,7 +3,7 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import { users } from "@/lib/db/schema";
-import { eq, desc } from "drizzle-orm";
+import { desc } from "drizzle-orm";
 import { Shield, ArrowLeft, CheckCircle, XCircle } from "lucide-react";
 import Link from "next/link";
 import ApproveButton from "@/components/ApproveButton";
