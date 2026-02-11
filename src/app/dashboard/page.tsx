@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
-import { LogOut, Shield, User, LayoutDashboard, Users } from "lucide-react";
+import { LogOut, Shield, User, LayoutDashboard, Users, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { db } from "@/lib/db";
 import { users } from "@/lib/db/schema";
@@ -56,7 +56,17 @@ export default async function DashboardPage() {
                     )}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <Link href="/dashboard/study-notes" className="card group hover:border-primary/50 transition-all flex flex-col gap-4">
+                        <div className="p-3 bg-indigo-500/10 w-fit rounded-xl group-hover:bg-indigo-500/20 transition-colors">
+                            <Sparkles size={24} className="text-indigo-500" />
+                        </div>
+                        <div>
+                            <p className="text-xl font-bold mb-1">Study Notes AI</p>
+                            <p className="text-sm text-muted-foreground">Summarize YouTube videos into clean study notes.</p>
+                        </div>
+                    </Link>
+
                     <div className="card flex flex-col gap-4">
                         <div className="p-3 bg-blue-500/10 w-fit rounded-xl">
                             <LayoutDashboard size={24} className="text-blue-500" />
